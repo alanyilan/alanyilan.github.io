@@ -363,3 +363,19 @@ figcaption {
   .lockup { grid-template-columns: 1fr; gap: 2rem 0; }
   .portrait { width: 14rem; }
 }
+
+/* ---------- embedded CV ---------- */
+
+.pdf-frame {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 36rem;
+  margin-top: 1.25rem;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+
+@media (max-width: 46rem) {
+  .pdf-frame { display: none; }
+}
