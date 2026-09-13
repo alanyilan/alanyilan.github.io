@@ -361,5 +361,5 @@ figcaption {
 
 @media (max-width: 46rem) {
   .lockup { grid-template-columns: 1fr; gap: 2rem 0; }
-  .portrait { width: 10rem; }
+  .portrait { width: 14rem; }
 }
