@@ -353,7 +353,7 @@ figcaption {
 
 .portrait {
   display: block;
-  width: 13rem;
+  width: 10rem;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border: 1px solid var(--rule);
