@@ -81,5 +81,46 @@
   </footer>
 
 </div>
+  <script>
+(function () {
+  var box = document.querySelector('[data-slideshow]');
+  if (!box) return;
+  var slides = box.querySelectorAll('.slide');
+  if (slides.length < 2) return;
+
+  var wrap = box.querySelector('.slide-dots');
+  var dots = [], at = 0, timer = null;
+  var DELAY = 5000;
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  slides.forEach(function (s, n) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'slide-dot';
+    b.setAttribute('aria-label', 'Photo ' + (n + 1));
+    b.addEventListener('click', function () { show(n); stop(); });
+    wrap.appendChild(b);
+    dots.push(b);
+  });
+
+  function show(next) {
+    slides[at].classList.remove('is-active');
+    dots[at].classList.remove('is-active');
+    at = (next + slides.length) % slides.length;
+    slides[at].classList.add('is-active');
+    dots[at].classList.add('is-active');
+  }
+  function start() { if (!still && !timer) timer = setInterval(function () { show(at + 1); }, DELAY); }
+  function stop() { clearInterval(timer); timer = null; }
+
+  dots[0].classList.add('is-active');
+  box.addEventListener('mouseenter', stop);
+  box.addEventListener('mouseleave', start);
+  box.addEventListener('focusin', stop);
+  box.addEventListener('focusout', start);
+  document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+  start();
+})();
+</script>
 </body>
 </html>
