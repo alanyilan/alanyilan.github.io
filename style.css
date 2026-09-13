@@ -1,0 +1,343 @@
+/* ============================================================
+   Alan Xu — personal site
+   No external requests. No fonts, no CDNs, no analytics.
+   Everything here loads from your own server.
+   ============================================================ */
+
+:root {
+  --paper:      #F4F5F2;
+  --ink:        #1C2321;
+  --water:      #1F4E5F;
+  --muted:      #6E7A72;
+  --rule:       #D5D9D2;
+
+  --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino,
+           Georgia, "Songti SC", "SimSun", serif;
+  --han:   "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+           "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto,
+           "Helvetica Neue", Arial, sans-serif;
+
+  --measure: 62ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0 1.5rem 6rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 54rem; margin: 0 auto; }
+
+/* ---------- links ---------- */
+
+a {
+  color: var(--water);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31, 78, 95, 0.3);
+}
+a:hover { border-bottom-color: var(--water); }
+a:focus-visible {
+  outline: 2px solid var(--water);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1.5rem;
+  top: 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.9rem;
+  border: 0;
+  z-index: 10;
+}
+
+/* ---------- header + nav ---------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding: 2.25rem 0 0;
+}
+
+.wordmark {
+  font-size: 1.0625rem;
+  color: var(--ink);
+  border-bottom: 0;
+  white-space: nowrap;
+}
+.wordmark .han { font-family: var(--han); margin-left: 0.4em; color: var(--water); }
+.wordmark:hover { color: var(--water); }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+.nav a {
+  color: var(--muted);
+  border-bottom: 0;
+  padding-bottom: 2px;
+}
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+/* ---------- the name lockup (home page only) ---------- */
+
+.lockup { padding: 4.5rem 0 3rem; }
+
+.lockup h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 9vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.lockup .han {
+  display: block;
+  font-family: var(--han);
+  font-size: clamp(1.6rem, 5vw, 2.375rem);
+  line-height: 1.3;
+  letter-spacing: 0.14em;
+  color: var(--water);
+  margin-top: 0.35em;
+  font-weight: 400;
+}
+.lockup .standfirst {
+  max-width: 34ch;
+  margin: 1.75rem 0 0;
+  font-size: 1.1875rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ---------- page title (interior pages) ---------- */
+
+.page-title {
+  margin: 3.5rem 0 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  font-weight: 400;
+  font-size: 2.125rem;
+  letter-spacing: -0.015em;
+}
+
+/* ---------- the rail layout ---------- */
+
+.band {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0 2.75rem;
+  padding: 2.75rem 0;
+  border-top: 1px solid var(--rule);
+}
+.band:first-of-type { border-top: 0; }
+
+.band > h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.9;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.band-body > *:first-child { margin-top: 0; }
+.band-body > *:last-child  { margin-bottom: 0; }
+.band-body p { max-width: var(--measure); margin: 0 0 1.1em; }
+
+/* ---------- publications ---------- */
+
+.pubs { margin: 0; padding: 0; list-style: none; }
+
+.pub {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  gap: 0 1.25rem;
+  margin-bottom: 1.9rem;
+}
+.pub:last-child { margin-bottom: 0; }
+
+.pub .year {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
+}
+.pub .title { display: block; line-height: 1.45; }
+.pub .meta {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+.pub .venue { font-style: italic; }
+
+/* ---------- projects ---------- */
+
+.projects { margin: 0; padding: 0; list-style: none; }
+
+.project { margin-bottom: 1.9rem; max-width: var(--measure); }
+.project:last-child { margin-bottom: 0; }
+.project h3 {
+  margin: 0 0 0.3em;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.project p { margin: 0 0 0.4em; }
+.project .status {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.55;
+  display: block;
+}
+
+/* ---------- courses ---------- */
+
+.courses { margin: 0 0 2rem; padding: 0; list-style: none; }
+.courses:last-child { margin-bottom: 0; }
+
+.course {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0 1.25rem;
+  margin-bottom: 0.85rem;
+}
+.course .code {
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.course .name { line-height: 1.45; }
+.course .where { color: var(--muted); font-size: 0.9375rem; }
+
+.subhead {
+  margin: 2.25rem 0 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.subhead:first-child { margin-top: 0; }
+
+/* ---------- student comments ---------- */
+
+.comments { margin: 0; padding: 0; list-style: none; max-width: var(--measure); }
+.comments li {
+  margin-bottom: 1.4rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--rule);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.comments li:last-child { margin-bottom: 0; }
+
+/* ---------- coauthors ---------- */
+
+.people { margin: 0; padding: 0; list-style: none; }
+.people li { margin-bottom: 0.55rem; line-height: 1.45; }
+.people .affil { color: var(--muted); font-size: 0.9375rem; }
+
+/* ---------- contact / elsewhere lists ---------- */
+
+.stack { margin: 0; padding: 0; list-style: none; }
+.stack li { margin-bottom: 0.5rem; line-height: 1.5; }
+.stack .note {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-left: 0.5em;
+}
+
+/* ---------- figures ---------- */
+
+figure { margin: 0 0 2.5rem; max-width: var(--measure); }
+figure:last-child { margin-bottom: 0; }
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.foot a { color: var(--muted); border-bottom-color: var(--rule); }
+.foot a:hover { color: var(--ink); }
+
+/* ---------- narrow screens ---------- */
+
+@media (max-width: 46rem) {
+  html { font-size: 17px; }
+  body { padding-left: 1.25rem; padding-right: 1.25rem; }
+
+  .band {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 2.25rem 0;
+  }
+  .band > h2 { margin-bottom: 1rem; }
+
+  .lockup { padding: 3rem 0 2.25rem; }
+  .course { grid-template-columns: 1fr; gap: 0; }
+  .course .code { line-height: 1.5; }
+}
+
+/* ---------- accessibility + print ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media print {
+  body { background: #fff; padding: 0; font-size: 11pt; }
+  .nav, .skip, .foot { display: none; }
+  a { color: inherit; border-bottom: 0; }
+  .band { break-inside: avoid; border-top: 1px solid #ccc; }
+}
