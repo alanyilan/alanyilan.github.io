@@ -341,3 +341,25 @@ figcaption {
   a { color: inherit; border-bottom: 0; }
   .band { break-inside: avoid; border-top: 1px solid #ccc; }
 }
+
+/* ---------- portrait ---------- */
+
+.lockup {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 3rem;
+  align-items: end;
+}
+
+.portrait {
+  display: block;
+  width: 13rem;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+@media (max-width: 46rem) {
+  .lockup { grid-template-columns: 1fr; gap: 2rem 0; }
+  .portrait { width: 10rem; }
+}
