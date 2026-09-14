@@ -341,6 +341,11 @@ figcaption {
   .band { break-inside: avoid; border-top: 1px solid #ccc; }
 }
 
+/* ---------- Carolina blue accents ---------- */
+
+.lockup .han        { color: var(--carolina); }
+.slide-dot.is-active { background: var(--carolina); border-color: var(--carolina); }
+.page-title         { border-bottom-color: var(--carolina); }
 /* ---------- portrait ---------- */
 
 .lockup {
