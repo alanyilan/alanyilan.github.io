@@ -445,6 +445,11 @@ figcaption {
 .profile-links a { border-bottom: 0; }
 .profile-links a:hover { border-bottom: 1px solid var(--water); }
 
+.profile-links svg.brand {
+  fill: currentColor;
+  stroke: none;
+}
+
 .profile-main > *:first-child { margin-top: 0; }
 .profile-main p { max-width: var(--measure); margin: 0 0 1.15em; }
 
@@ -469,3 +474,4 @@ figcaption {
   .profile-card { position: static; }
   .profile-photo { width: 9rem; }
 }
+
