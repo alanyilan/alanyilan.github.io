@@ -35,61 +35,57 @@
     </nav>
   </header>
 
-  <main id="main">
+    <main id="main">
 
-    <div class="lockup">
-      <div class="lockup-text">
-        <h1>Alan Xu<span class="han" lang="zh-Hans">徐一覽</span></h1>
-        <p class="standfirst">I put numbers on things that carry no price: cleaner water, lower-carbon food, less waste. 
-          I want those numbers to leave someone better off: the producer or the consumer, and to make sense to people who'll never read academic papers.</p>
-      </div>
-      <img class="portrait" src="images/portrait.jpg" alt="Alan Xu">
-    </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-uni" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-4 7 4v13M10 21v-6h4v6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6.5 8.5 6 8.5-6"/></symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="m12 4 10 5-10 5L2 9z"/><path d="M6 11.5V16c0 1.6 2.7 3 6 3s6-1.4 6-3v-4.5"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"/></symbol>
+    </svg>
 
-    <section class="band">
-      <h2>About</h2>
-      <div class="band-body">
+    <div class="profile-layout">
+
+      <aside class="profile-card">
+        <img class="profile-photo" src="images/portrait.jpg" alt="Alan Xu">
+        <h1 class="profile-name">Alan Xu<span class="han" lang="zh-Hans">徐一覽</span></h1>
+        <p class="profile-role">Assistant Professor of Agricultural Economics</p>
+
+        <ul class="profile-links">
+          <li><svg><use href="#i-uni"/></svg><span>Fort Hays State University</span></li>
+          <li><svg><use href="#i-pin"/></svg><span>Hays, Kansas</span></li>
+          <li><svg><use href="#i-mail"/></svg><a href="mailto:y_xu46@fhsu.edu">y_xu46@fhsu.edu</a></li>
+          <li><svg><use href="#i-doc"/></svg><a href="cv.html">Curriculum vitae</a></li>
+          <li><svg><use href="#i-globe"/></svg><a href="https://orcid.org/0000-0002-5216-3333">ORCID</a></li>
+          <li><svg><use href="#i-cap"/></svg><a href="https://scholar.google.com/citations?user=-y_ta_cAAAAJ&amp;hl=en">Google Scholar</a></li>
+          <li><svg><use href="#i-globe"/></svg><a href="https://www.linkedin.com/in/alanyilan/">LinkedIn</a></li>
+          <li><svg><use href="#i-globe"/></svg><a href="https://x.com/alanyilan">X</a></li>
+        </ul>
+      </aside>
+
+      <div class="profile-main">
+        <p class="lede">I put numbers on things that carry no price: cleaner water, lower-carbon
+        food, a beach without an algal bloom. The data are mine, from surveys and experiments I
+        design and run, and I care as much about the people who grow food as the people who love
+        eating it. I'm firmly in the second group.</p>
+
+        <h2>About</h2>
         <p>I am an applied economist interested in behavioral nudges, sustainability and food
         choice, food marketing, consumer behavior, environmental valuation, and discrete choice
         modeling, among others. I like materializing novel ideas into economic research questions
         with first-hand data collected via surveys and experiments.</p>
 
-        <p>I am currently an assistant professor of agricultural economics at
-        <a href="https://www.fhsu.edu/agriculture/Faculty-and-Staff/">Fort Hays State
-        University</a>. I received my Ph.D. in Agricultural, Environmental, and Development
-        Economics from <a href="https://aede.osu.edu/home">The Ohio State University</a> in 2022.
-        I also hold master's degrees in Economics from the University of Delaware and in
-        Statistics from the University of North Carolina at Chapel Hill.</p>
+        <p>I received my Ph.D. in Agricultural, Environmental, and Development Economics from
+        <a href="https://aede.osu.edu/home">The Ohio State University</a> in 2022. I also hold
+        master's degrees in Economics from the University of Delaware and in Statistics from the
+        University of North Carolina at Chapel Hill.</p>
       </div>
-    </section>
 
-    <section class="band">
-      <h2>Contact</h2>
-      <div class="band-body">
-        <ul class="stack">
-          <li><a href="mailto:y_xu46@fhsu.edu">y_xu46@fhsu.edu</a></li>
-          <li>Albertson Hall 216, Department of Agriculture</li>
-          <li>Fort Hays State University, 600 Park Street, Hays, KS 67601</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="band">
-      <h2>Elsewhere</h2>
-      <div class="band-body">
-        <ul class="stack">
-          <li><a href="cv.html">Curriculum vitae</a></li>
-          <li><a href="https://orcid.org/0000-0002-5216-3333">ORCID</a></li>
-          <li><a href="https://scholar.google.com/citations?user=-y_ta_cAAAAJ&amp;hl=en">Google
-            Scholar</a></li>
-          <li><a href="https://www.linkedin.com/in/alanyilan/">LinkedIn</a></li>
-          <li><a href="https://x.com/alanyilan">X</a></li>
-        </ul>
-      </div>
-    </section>
+    </div>
 
   </main>
-
   <footer class="foot">
     <p>Last updated September 2026.</p>
   </footer>
