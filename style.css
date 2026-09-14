@@ -454,9 +454,11 @@ figcaption {
 .profile-main p { max-width: var(--measure); margin: 0 0 1.15em; }
 
 .profile-main .lede {
-  font-size: 1.1875rem;
-  line-height: 1.55;
+  font-size: 1.4375rem;
+  line-height: 1.45;
+  font-style: italic;
   color: var(--ink);
+  max-width: 38ch;
   margin-bottom: 2rem;
 }
 
