@@ -1,15 +1,14 @@
 /* ============================================================
    Alan Xu — personal site
-   No external requests. No fonts, no CDNs, no analytics.
-   Everything here loads from your own server.
    ============================================================ */
 
 :root {
   --paper:      #F4F5F2;
   --ink:        #1C2321;
-  --water:      #1F4E5F;
+  --water:      #1A5C8A;   /* darkened Carolina blue — for links and small text */
+  --carolina:   #4B9CD3;   /* true Carolina blue — large text and accents only */
   --muted:      #6E7A72;
-  --rule:       #D5D9D2;
+  --rule:       #CBDCE8;   /* faint Carolina tint for hairlines */
 
   --serif: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino,
            Georgia, "Songti SC", "SimSun", serif;
