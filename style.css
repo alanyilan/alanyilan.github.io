@@ -457,7 +457,7 @@ figcaption {
   font-size: 1.4375rem;
   line-height: 1.45;
   font-style: italic;
-  color: var(--ink);
+  color: var(--water);
   max-width: 38ch;
   margin-bottom: 2rem;
 }
